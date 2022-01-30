@@ -2,11 +2,14 @@ import express, { json } from "express"
 import cors from "cors"
 import routes from "./routes"
 import { resolve } from "path"
+import { P2PServer } from "./server_p2p"
+import { Blockchain } from "./modules/Blockchain/blockchain"
 
 declare global {
     namespace Express {
         interface Request {
-            injection: any
+            p2pserver: P2PServer
+            blockchain: Blockchain
         }
     }
 }
