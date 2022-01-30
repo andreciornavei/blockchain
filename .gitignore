@@ -6,4 +6,3 @@ tmp/
 temp/
 dist/
 .env
-server_p2p.ts
