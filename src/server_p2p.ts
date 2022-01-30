@@ -2,6 +2,7 @@
 /** Import websocket lib to enable p2p solution         **/
 /*********************************************************/
 import Websocket from "ws"
+import { Blockchain } from "./modules/Blockchain/blockchain"
 
 /*********************************************************/
 /** Retrieve the peer port to try connection            **/
@@ -19,9 +20,10 @@ const peers = process.env.PEERS ? process.env.PEERS.split(",") : []
 /*********************************************************/
 export class P2PServer {
 
+    blockchain: Blockchain
     sockets: Websocket[]
 
-    constructor(blockchain) {
+    constructor(blockchain: Blockchain) {
         this.blockchain = blockchain
         this.sockets = []
     }
